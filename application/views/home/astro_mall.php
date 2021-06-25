@@ -1,3 +1,9 @@
+<style>
+	#products.products_section .product-thumb
+	{
+		min-height: 360px;
+	}
+</style>
 <!-- breadcrumb -->
 <section class="main_breadcrumb">
 	<div class="container-fluid">
@@ -29,97 +35,6 @@
 								</ul>
 						</div>
 						<!-- category end-->
-						
-						<!-- category product -->
-						<div id="category_product" class="category_product">
-							<h3 class="wow fadeInDown animated">Latest Products </h3>
-								<div class="">
-									<div class="product-thumb">
-									<div class="image wow fadeInDown animated">
-										<a href=""><img class="wow fadeInDown animated" src="<?php echo base_url();?>assets/image/products/products_01.png" alt="Kundli Dosha" title="Kundli Dosha" width="100%"></a>
-										<div class="sale"><span class="">Sale</span></div>
-									</div>
-									<div class="caption ">
-										
-										<div class="rate-and-title">
-											<h4 class="wow fadeInDown animated"><a href="">Natural Mineral Stone</a></h4>
-											<div class="rating wow fadeInDown animated">
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<div class="clear"></div>
-											</div>
-											<p class="price wow fadeInDown animated">
-												<span class="price-old">$123.20</span> <span class="price-new">$110.00</span>  
-											</p>
-											<button type="button" class="btn wow fadeInDown animated" onclick="" title="Add to Cart"><span><i class="fa fa-shopping-cart"></i> Add to Cart</span></button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="clear"></div>
-							<!-- products category end-->
-								<div class="">
-									<div class="product-thumb">
-									<div class="image wow fadeInDown animated">
-										<a href=""><img class="wow fadeInDown animated" src="<?php echo base_url();?>assets/image/products/products_07.png" alt="Kundli Dosha" title="Kundli Dosha" width="100%"></a>
-										<div class="sale"><span class="">Sale</span></div>
-									</div>
-									<div class="caption ">
-										
-										<div class="rate-and-title">
-											<h4 class="wow fadeInDown animated"><a href="">Natural Agate</a></h4>
-											<div class="rating wow fadeInDown animated">
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<div class="clear"></div>
-											</div>
-											<p class="price wow fadeInDown animated">
-												<span class="price-old">$123.20</span> <span class="price-new">$110.00</span>  
-											</p>
-											<button type="button" class="btn wow fadeInDown animated" onclick="" title="Add to Cart"><span><i class="fa fa-shopping-cart"></i> Add to Cart</span></button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="clear"></div>
-							<!-- products category end-->
-							<div class="">
-								<div class="product-thumb">
-									<div class="image wow fadeInDown animated">
-										<a href=""><img class="wow fadeInDown animated" src="<?php echo base_url();?>assets/image/products/products_16.png" alt="Kundli Dosha" title="Kundli Dosha" width="100%"></a>
-										<div class="sale"><span class="">Sale</span></div>
-									</div>
-									<div class="caption ">
-										
-										<div class="rate-and-title">
-											<h4 class="wow fadeInDown animated"><a href="">Titanium Quartz</a></h4>
-											<div class="rating wow fadeInDown animated">
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<div class="clear"></div>
-											</div>
-											<p class="price wow fadeInDown animated">
-												<span class="price-old">$123.20</span> <span class="price-new">$110.00</span>  
-											</p>
-											<button type="button" class="btn wow fadeInDown animated" onclick="" title="Add to Cart"><span><i class="fa fa-shopping-cart"></i> Add to Cart</span></button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="clear"></div>
-							<!-- products category end-->
-						</div>
-						<!-- products category end-->
-						
 					</div>
 				</div>
 				
@@ -127,15 +42,15 @@
 					<div class="eb_left">
 			<!--1 -->
 					<?php foreach ($astro_mall_product as $key): ?>
-						<div class="col-sm-4">
+						<div class="col-sm-3">
 							<div class="product-thumb">
 								<div class="image wow fadeInDown animated">
-									<a href="<?php echo base_url('home/product_info/'.$key->id);?>"><img class="wow fadeInDown animated" src="<?php echo base_url($key->image);?>" alt="<?php echo $key->name;?>" title="<?php echo $key->name;?>" width="100%"></a>
+									<a href="<?php echo base_url('home/product_info/'.$key->id);?>"><img class="wow fadeInDown animated" src="<?php echo base_url($key->image);?>" alt="<?php echo $key->name;?>" title="<?php echo $key->name;?>" width="100%" height="200px"></a>
 								</div>
 								<div class="caption">
 									
 									<div class="rate-and-title">
-										<h4 class="wow fadeInDown animated"><a href="<?php echo base_url('home/product_info/'.$key->id);?>"><?php echo $key->name;?></a></h4>
+										<h6 class="wow fadeInDown animated"><a href="<?php echo base_url('home/product_info/'.$key->id);?>"><?php echo $key->name;?></a></h6>
 										<p class="price wow fadeInDown animated">
 											 <span class="price-new">Rs <?php echo $key->price;?></span>  
 										</p>

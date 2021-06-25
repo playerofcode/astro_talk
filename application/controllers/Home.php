@@ -13,11 +13,16 @@ class Home extends CI_Controller {
 		 ];
 		 $this->load->library('upload',$config);
 		$this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
+		include APPPATH . 'third_party/src/Payment.php';
+		include APPPATH . 'third_party/src/Validator.php';
+		include APPPATH . 'third_party/src/Crypto.php';
 	}
 	public function index()
 	{
+		$data['astro_mall_product']=$this->model->getAstroMallProduct();
+		$data['recent_blog']=$this->model->Recent_blog();
 		$this->load->view('home/header');
-		$this->load->view('home/index');
+		$this->load->view('home/index',$data);
 		$this->load->view('home/footer');
 	}
 	public function about()
@@ -129,7 +134,7 @@ class Home extends CI_Controller {
 	{
 		$this->form_validation->set_rules('fname', 'First Name', 'trim|required|min_length[3]|max_length[12]');
 		$this->form_validation->set_rules('lname', 'Last Name', 'trim|required|min_length[3]|max_length[12]');
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.email]');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[3]|max_length[12]');
 		$this->form_validation->set_rules('cpassword', 'Confirm Password', 'trim|required|matches[password]');
 		if($this->form_validation->run())
@@ -169,7 +174,7 @@ class Home extends CI_Controller {
 		else
 		{
 			$this->session->set_flashdata('msg', "Email/Password is incorrect. Try again");
-				return redirect(base_url().'home/index');
+				return redirect(base_url().'home/login');
 		}
 	}
 	public function check_login()
@@ -434,5 +439,170 @@ class Home extends CI_Controller {
 		$this->load->view('home/pooja',$data);
 		$this->load->view('home/footer');
 	}
-	//Horoscope End
+	public function pooja_info($puja_id)
+	{
+		$data['pooja']=$this->model->getPooja($puja_id);
+		$this->load->view('home/header');
+		$this->load->view('home/pooja_info',$data);
+		$this->load->view('home/footer');
+	}
+	public function  book_pooja($puja_id)
+	{
+		$this->check_login();
+		$data['pooja']=$this->model->getPooja($puja_id);
+		$this->load->view('home/header');
+		$this->load->view('home/book_pooja',$data);
+		$this->load->view('home/footer');
+	}
+	public function confirm_pooja_booking()
+	{
+		@$current_balance=$this->model->getCurrentBalance($this->session->userdata('email'));
+		if($current_balance)
+		{
+		$form=$this->input->post();
+		if($current_balance>=$form['puja_price']):
+			$remain_balance=$current_balance-$form['puja_price'];
+			$data=array(
+			'puja_name'=>$form['puja_name'],
+			'puja_price'=>$form['puja_price'],
+			'puja_location'=>$form['puja_location'],
+			'priest_preference'=>$form['priest_preference'],
+			'puja_date'=>$form['puja_date'],
+			'puja_time'=>$form['puja_time'],
+			'name'=>$form['name'],
+			'mobno'=>$form['mobno'],
+			'email'=>$form['email'],
+			'country'=>$form['country'],
+			'state'=>$form['state'],
+			'city'=>$form['city'],
+			'pincode'=>$form['pincode'],
+			'note'=>$form['note']
+		);
+		if($this->model->confirmPoojaBooking($data))
+		{
+			if($this->model->updateRemainingBalance($this->session->userdata('email'),$remain_balance)):
+			$wallet=array(
+				'email'=>$this->session->userdata('email'),
+				'description'=>$form['puja_name'],
+				'amount'=>$form['puja_price']
+			);
+			if($this->model->addWalletHistory($wallet)):
+			echo "<script>alert('Your Booking is successful.');window.location.href='".base_url('home/pooja')."';</script>";
+			endif;
+			endif;
+		}
+		else
+		{
+			echo "<script>alert('Something went wrong');window.location.href='".base_url('home/pooja')."';</script>";
+		}
+		else:
+		echo "<script>alert('Insufficiant Balance.Add money to your wallet and try again.');window.location.href='".base_url('home/pooja')."';</script>";
+		endif;
+		}
+		else
+		{
+		echo "<script>alert('Unable to fetch balance.Try again later.');window.location.href='".base_url('home/pooja')."';</script>";
+		}
+	}
+	public function wallet()
+	{
+		$data['current_balance']=$this->model->getCurrentBalance($this->session->userdata('email'));
+		$this->load->view('home/header');
+		$this->load->view('home/wallet',$data);
+		$this->load->view('home/footer');
+	}
+	public function add_balance()
+	{
+		$this->check_login();
+		$form_amount=$this->input->post('amount');
+		$fname          = '';
+		$product_name   = 'Add Balance';
+		$email          = $this->session->userdata('email');
+		$amount         = $form_amount;
+		$contact        = '';
+		$country        = 'Índia';
+		$state          = '';
+		$city           = '';
+		$postalcode     = '';
+		$address        = '';
+		$obj = new \Paykun\Checkout\Payment('907827924705710', '9ADEC6FF0C1804049C84F02B0871B3AC', 'CA4CF211861A319F3A993FE8A672CC72', false,true);
+		// $successUrl = str_replace("request", "successs", $_SERVER['HTTP_REFERER']);
+		// $failUrl 	= str_replace("request", "failed", $_SERVER['HTTP_REFERER']);
+		$successUrl=base_url('home/successpayy');
+		$failUrl =base_url('home/failurepayment');
+		$microtime = str_replace('.', '', microtime(true));
+		$p_id=substr($microtime, 0, 14);
+		$obj->initOrder($p_id, $product_name,  $amount, $successUrl,  $failUrl, 'INR');
+		$obj->addCustomer($fname, $email, $contact);
+		$obj->addShippingAddress($country,$state,$city,$postalcode,$address);
+		$obj->addBillingAddress($address,$city,$state,$country,$postalcode);
+		//$obj->setCustomFields(array('udf_1' =>$custom_field_1.'0'));
+		echo $obj->submit();
+	}
+	public function successpay()
+	{
+		$obj = new \Paykun\Checkout\Payment('907827924705710', '9ADEC6FF0C1804049C84F02B0871B3AC', 'CA4CF211861A319F3A993FE8A672CC72', false,true);
+		$response = $obj->getTransactionInfo($_REQUEST['payment-id']);
+		if(is_array($response) && !empty($response)) {
+    	if($response['status'] && $response['data']['transaction']['status'] == "Success") {
+    	$payment_id=$response['data']['transaction']['payment_id'];
+		$payment_mode=$response['data']['transaction']['payment_mode'];
+		$order_id=$response['data']['transaction']['order']['order_id'];
+		//$payment_for=$response['data']['transaction']['order']['product_name'];
+ 	    //$payment_status=$response['data']['transaction']['status'];
+		$gross_amount=$response['data']['transaction']['order']['gross_amount'];
+		//$name=$response['data']['transaction']['customer']['name'];
+		$email_id=$response['data']['transaction']['customer']['email_id'];
+		//$mobno=$response['data']['transaction']['customer']['mobile_no'];
+		$data=array(
+			'payment_id'=>$payment_id,
+			'payment_mode'=>$payment_mode,
+			'order_id'=>$order_id,
+			'gross_amount'=>$gross_amount,
+			'email_id'=>$email_id
+		);
+		$current_balance=$this->model->getCurrentBalance($this->session->userdata('email'));
+		$remain_balance=$current_balance+$gross_amount;
+		if($this->model->updateRemainingBalance($this->session->userdata('email'),$remain_balance)):
+			if($this->model->addTransactionHistory($data))
+		    {
+			$this->session->set_flashdata('msg', "Balance added successfully on your wallet."); 
+			redirect(base_url().'home/wallet');
+			}
+		    else 
+		    {
+		      $this->session->set_flashdata('msg', "Transaction Failed"); 
+					redirect(base_url().'home/wallet');
+		    }
+		endif;
+        }
+		}
+		}
+		public function failurepayment()
+		{
+			$obj = new \Paykun\Checkout\Payment('907827924705710', '9ADEC6FF0C1804049C84F02B0871B3AC', 'CA4CF211861A319F3A993FE8A672CC72', false,true);
+				$response = $obj->getTransactionInfo($_REQUEST['payment-id']);
+				if(is_array($response) && !empty($response)) {
+				if($response['status'] && $response['data']['transaction']['status'] == "Failed") {
+		        $this->session->set_flashdata('msg', "Transaction Failed"); 
+					redirect(base_url().'home/wallet');
+		    }
+			}
+		}
+		public function history()
+		{
+			$this->check_login();
+			$data['order_history']=$this->model->getOrderHistory($this->session->userdata('email'));
+			$data['wallet_history']=$this->model->getWalletHistory($this->session->userdata('email'));
+			$data['transaction_history']=$this->model->getTransactionHistory($this->session->userdata('email'));
+			$this->load->view('home/header');
+			$this->load->view('home/history',$data);
+			$this->load->view('home/footer');
+		}
+		public function disclaimer()
+		{
+			$this->load->view('home/header');
+			$this->load->view('home/disclaimer');
+			$this->load->view('home/footer');
+		}
 }

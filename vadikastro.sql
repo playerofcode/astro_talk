@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2021 at 08:44 AM
+-- Generation Time: Jun 25, 2021 at 11:10 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -296,7 +296,12 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`id`, `puja_name`, `puja_location`, `priest_preference`, `puja_date`, `puja_time`, `puja_price`, `name`, `mobno`, `email`, `country`, `state`, `city`, `pincode`, `note`, `date`, `status`) VALUES
-(7, 'Ganesh Puja', 'At Home', 'Hindi', '2020-07-26', '12:00', '2100', 'Vivek', '74859685858', 'vivek@gmail.com', 'India', 'Uttar Pradesh', 'City', '748589', 'note here', '2020-07-25 13:33:22', 'confirm');
+(7, 'Ganesh Puja', 'At Home', 'Hindi', '2020-07-26', '12:00', '2100', 'Vivek', '74859685858', 'vivek@gmail.com', 'India', 'Uttar Pradesh', 'City', '748589', 'note here', '2020-07-25 13:33:22', 'confirm'),
+(8, 'Donation For Needy Priests', 'At Home', 'Hindi', '2021-06-26', '08:25', '1000', 'erstfguhi', '234567890', 'test@gmail.com', 'India', 'dfghjkl', 'dfghjk', 'fdghjk', 'dfghjkl', '2021-06-24 23:10:55', 'pending'),
+(9, 'Donation For Needy Priests', 'At Home', 'Hindi', '2021-06-26', '08:25', '1000', 'erstfguhi', '234567890', 'test@gmail.com', 'India', 'dfghjkl', 'dfghjk', 'fdghjk', 'dfghjkl', '2021-06-24 23:11:45', 'pending'),
+(10, 'Donation For Needy Priests', 'At Home', 'Hindi', '2021-06-25', '02:26', '1000', 'rttdfyhj', 'dtfyuhiokp', 'test@gmail.com', 'dtyguhij', 'tdyuuhij', 'tdyguji', 'tydguij', 'dytguhiojo', '2021-06-24 23:22:50', 'pending'),
+(11, 'Donation For Needy Priests', 'At Home', 'Hindi', '2021-06-25', '02:26', '1000', 'rttdfyhj', 'dtfyuhiokp', 'test@gmail.com', 'dtyguhij', 'tdyuuhij', 'tdyguji', 'tydguij', 'dytguhiojo', '2021-06-24 23:23:18', 'confirm'),
+(12, 'Shradh', 'At Home', 'Hindi', '2021-06-27', '04:00', '2800', 'rdtfuhjok', 'srdguiokp', 'test@gmail.com', 'rtfgyu', 'dtyfyug', 'rdttfyguh', 'tdyguh', 'tfyguijo', '2021-06-24 23:24:51', 'confirm');
 
 -- --------------------------------------------------------
 
@@ -312,14 +317,6 @@ CREATE TABLE `contact` (
   `message` text NOT NULL,
   `date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `contact`
---
-
-INSERT INTO `contact` (`id`, `name`, `email`, `subject`, `message`, `date`) VALUES
-(2, 'rtdgujio', 'tyguih@ghjk.gfhjk', '', 'gfhjkl', '2021-06-11 21:18:09'),
-(3, 'rtdyguhij', 'dtyguhi@fghjk.gfhjkl', '', 'fghjkl', '2021-06-11 21:18:39');
 
 -- --------------------------------------------------------
 
@@ -425,19 +422,19 @@ INSERT INTO `pujas` (`puja_id`, `cat_id`, `cat_name`, `puja_name`, `puja_img`, `
 (64, '8', 'Festival Pujas', 'Tulsi Vivah Puja', 'upload/Tulsi-Vivah-Puja.jpg', '<p>Tulsi Vivah Puja involves the marriage between the Lord Krishna and Tulsi Plant. Tulsi or basil plant is considered to be a very sacred plant by Hindus.</p>\r\n', '', 'active'),
 (65, '8', 'Festival Pujas', 'Govardhan Puja', 'govardhan.jpg', '<p>Govardhan Puja as it is also known, is a Hindu festival in which devotees prepare and offer a large variety of vegetarian food to Bhagwan Shri Krishna as a mark of gratitude</p>\r\n', '', 'active'),
 (66, '8', 'Shanti Pujas', 'Guru Chandal Yoga Shanti', 'upload/chandal-yog-shanti-puja.jpg', '<p>Guru Chandal Yog Shanti is performed for overcoming all the problems coming due to the Yuti of Guru with Rahu or Ketu Graha. Helps in attaining happy life and increases focus and maintains happy relations.</p>\r\n', '', 'active'),
-(67, '7', 'Shanti Pujas', 'Kaal Sarp Dosh Puja', 'kaal-sarp-dosh-puja.png', 'When all the planets come between Rahu and Ketu than Kaal Sarpa Dosha occurs. A person faces lots of hardships due to this dosh. By performing this shanti all the negative effects are nullified.', '2200', 'active'),
-(68, '7', 'Shanti Pujas', 'Shani Chandra Vish Yog Nivaran', 'shani-chandra-vish-yog-shanti.jpg', 'Shani and Chandra Vish Yog Shanti is performed for overcoming all the problems coming due to the Yuti of both the grahas.', '11800', 'active'),
+(67, '8', 'Shanti Pujas', 'Kaal Sarp Dosh Puja', 'upload/kaal-sarp-dosh-puja.png', 'When all the planets come between Rahu and Ketu than Kaal Sarpa Dosha occurs. A person faces lots of hardships due to this dosh. By performing this shanti all the negative effects are nullified.', '', 'active'),
+(68, '8', 'Shanti Pujas', 'Shani Chandra Vish Yog Nivaran', 'upload/shani-chandra-vish-yog-shanti.jpg', 'Shani and Chandra Vish Yog Shanti is performed for overcoming all the problems coming due to the Yuti of both the grahas.', '', 'active'),
 (69, '7', 'Shanti Pujas', 'Shani Chandra Vish Yog Nivaran', 'shani-chandra-vish-yog-shanti.jpg', 'Shani and Chandra Vish Yog Shanti is performed for overcoming all the problems coming due to the Yuti of both the grahas.', '11800', 'active'),
-(70, '7', 'Shanti Pujas', 'Shani Ketu Shrapit Dosh Nivaran', 'Shani-Ketu-Shrapit-Dosh.jpg', 'Shani Ketu Shrapit Dosh Nivaran\r\nShani Ketu Shrapit Dosh Shanti is performed for overcoming all the problems coming due to the Yuti of both the grahas. attain stability in professional and Business life', '11800', 'active'),
-(71, '7', 'Shanti Pujas', 'Vishti Karan(Bhadra)Shanti Puja', 'Vishti-Karan-Shanti-puja.jpg', 'Vishti karan is one among the 11 Karanas , when a person born under the Vishti yog has a very impatient nature and gets many health-related problems. Performing Vishti Yog Shanti helps in removing all the ill effects and helps the person attain peace and ', '7800', 'active'),
-(72, '7', 'Shanti Pujas', 'Mangal Dosh Shanti Puja', 'mangal_dosh.jpg', 'Mangala Dosha, also known as Mangal Dosh because of schwa deletion, is a Hindu superstition prevalent in India. A person born under the influence of Mars as per Hindu astrology is said to have \"mangala dosha\" such a person is called a Mangalik.', '2800', 'active'),
-(73, '8', 'Pitru Pujas', 'Amavasya Tarpan', 'Tarpanam.jpg', 'Tarpan is to please our ancestors and satisfy them by offering water mixed with Black Til. Ancestors ie Pithrus, since they have left the world are dependent on only their younger generation to feed them. This feeding is done through Tarpan. It is importa', '1100', 'active'),
-(74, '8', 'Pitru Pujas', 'Antim Sanskar-Last Rites', 'Antim-Sanskar-Last-Rites.jpg', 'Antim Sanskar is the set of rituals performed for the person who dies so that their Soul gets peace and they go to the Pitru lok happily without any problem.', '3800', 'active'),
-(75, '8', 'Pitru Pujas', 'Barsi Ceremony', 'Barsi-Puja.jpg', 'The Barsi Ceremony is the First year Shradh ceremony performed for the departed soul. Eldermost son performs the shradh and other members participate in the ceremony and brahman bhojan is given to get the blessings from our pitrus.', '5400', 'active'),
-(76, '8', 'Pitru Pujas', 'Brahmin For Bhojan', 'Brahmin-Bhojan.jpg', 'A Brahmin Bhoj is an Ancient Custom of offering food to Brahmins since they represent God, to get the blessings of our pitrus. Brahmin Bhojan Can be arranged for any ceremonies like Marriage, Shradh, Pitru paksha.', '1000', 'active'),
-(77, '8', 'Pitru Pujas', 'Donation For Needy Priests', 'DonateNow.jpg', 'Donate for the poor Priest families who are most suffering in this Corona lockdown across the country. Your small donation can make a huge difference in the life of their family. The Coronavirus COVID-19 has spread across all the countries and infected th', '1000', 'active'),
-(78, '8', 'Pitru Pujas', 'Pitru Paksha (Mahalaya) Shradh Puja', 'Pitru-paksha.jpg', 'Pitru paksha or Mahalaya paksha is a 15 lunar days period wherein our pitrus are allowed to come to earth and Eldermost son performs the shradh and other members participate in the ceremony and brahman bhojan is given to get the blessings from our pitrus.', '5800', 'active'),
-(79, '8', 'Pitru Pujas', 'Shradh', 'Shradh.jpeg', 'The Shradh Ceremony is offering food for your pithrus in the pithru loga and thus satisfying their atma enabling us to receive the blessings of the Pitrus. This Shradh Ceremony can be done as Hiranya or it can be performed along with the havan.', '2800', 'active');
+(70, '8', 'Shanti Pujas', 'Shani Ketu Shrapit Dosh Nivaran', 'upload/Shani-Ketu-Shrapit-Dosh.jpg', 'Shani Ketu Shrapit Dosh Nivaran\r\nShani Ketu Shrapit Dosh Shanti is performed for overcoming all the problems coming due to the Yuti of both the grahas. attain stability in professional and Business life', '', 'active'),
+(71, '8', 'Shanti Pujas', 'Vishti Karan(Bhadra)Shanti Puja', 'upload/Vishti-Karan-Shanti-puja.jpg', 'Vishti karan is one among the 11 Karanas , when a person born under the Vishti yog has a very impatient nature and gets many health-related problems. Performing Vishti Yog Shanti helps in removing all the ill effects and helps the person attain peace and ', '', 'active'),
+(72, '8', 'Shanti Pujas', 'Mangal Dosh Shanti Puja', 'upload/mangal_dosh.jpg', 'Mangala Dosha, also known as Mangal Dosh because of schwa deletion, is a Hindu superstition prevalent in India. A person born under the influence of Mars as per Hindu astrology is said to have \"mangala dosha\" such a person is called a Mangalik.', '', 'active'),
+(73, '8', 'Pitru Pujas', 'Amavasya Tarpan', 'upload/Tarpanam.jpg', 'Tarpan is to please our ancestors and satisfy them by offering water mixed with Black Til. Ancestors ie Pithrus, since they have left the world are dependent on only their younger generation to feed them. This feeding is done through Tarpan. It is importa', '', 'active'),
+(74, '8', 'Pitru Pujas', 'Antim Sanskar-Last Rites', 'upload/Antim-Sanskar-Last-Rites.jpg', 'Antim Sanskar is the set of rituals performed for the person who dies so that their Soul gets peace and they go to the Pitru lok happily without any problem.', '', 'active'),
+(75, '8', 'Pitru Pujas', 'Barsi Ceremony', 'upload/Barsi-Puja.jpg', 'The Barsi Ceremony is the First year Shradh ceremony performed for the departed soul. Eldermost son performs the shradh and other members participate in the ceremony and brahman bhojan is given to get the blessings from our pitrus.', '', 'active'),
+(76, '8', 'Pitru Pujas', 'Brahmin For Bhojan', 'upload/Brahmin-Bhojan.jpg', 'A Brahmin Bhoj is an Ancient Custom of offering food to Brahmins since they represent God, to get the blessings of our pitrus. Brahmin Bhojan Can be arranged for any ceremonies like Marriage, Shradh, Pitru paksha.', '', 'active'),
+(77, '8', 'Pitru Pujas', 'Donation For Needy Priests', 'upload/DonateNow.jpg', 'Donate for the poor Priest families who are most suffering in this Corona lockdown across the country. Your small donation can make a huge difference in the life of their family. The Coronavirus COVID-19 has spread across all the countries and infected th', '', 'active'),
+(78, '8', 'Pitru Pujas', 'Pitru Paksha (Mahalaya) Shradh Puja', 'upload/Pitru-paksha.jpg', 'Pitru paksha or Mahalaya paksha is a 15 lunar days period wherein our pitrus are allowed to come to earth and Eldermost son performs the shradh and other members participate in the ceremony and brahman bhojan is given to get the blessings from our pitrus.', '', 'active'),
+(79, '8', 'Pitru Pujas', 'Shradh', 'upload/Shradh.jpeg', 'The Shradh Ceremony is offering food for your pithrus in the pithru loga and thus satisfying their atma enabling us to receive the blessings of the Pitrus. This Shradh Ceremony can be done as Hiranya or it can be performed along with the havan.', '', 'active');
 
 -- --------------------------------------------------------
 
@@ -552,7 +549,10 @@ INSERT INTO `transaction_history` (`id`, `payment_id`, `order_id`, `payment_mode
 (1, '78494-52019-77719-01029', '15956524092414', 'Credit Card', 'vivek@gmail.com', '10', '2020-07-25 10:49:01'),
 (2, '96682-20797-14577-07047', '15956544502388', 'Credit Card', 'vivek@gmail.com', '50', '2020-07-25 10:51:25'),
 (3, '09871-49520-76827-82907', '15956553702885', 'Credit Card', 'vivek@gmail.com', '10', '2020-07-25 11:07:35'),
-(4, '49518-08907-62279-01797', '15956555053695', 'Credit Card', 'vivek@gmail.com', '10', '2020-07-25 11:09:25');
+(4, '49518-08907-62279-01797', '15956555053695', 'Credit Card', 'vivek@gmail.com', '10', '2020-07-25 11:09:25'),
+(5, '80075-19820-74270-97490', '16245472062905', 'Credit Card', 'test@gmail.com', '5000', '2021-06-24 20:37:15'),
+(6, '18770-02904-79727-81527', '16245595692205', 'Credit Card', 'test@gmail.com', '500', '2021-06-25 00:03:19'),
+(7, '32759-41480-28097-78077', '16245597755951', 'Credit Card', 'test@gmail.com', '500', '2021-06-25 00:06:46');
 
 -- --------------------------------------------------------
 
@@ -577,7 +577,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `f_name`, `l_name`, `email`, `password`, `date`, `balance`) VALUES
 (3, 'test first name', 'testing last name', 'deepy.kumar4@gmail.com', '123', '2020-09-28 06:38:59', '0'),
 (4, 'kugubl', 'yghj', 'ghuhgh@ghghkj.ugu', '00000000', '2021-06-10 08:48:25', '0'),
-(5, 'Test', 'User', 'test@gmail.com', 'adminadmin', '2021-06-10 17:32:49', '0');
+(6, 'xtcvjh', 'srtdfygjh', 'test@gmail.com', 'admin', '2021-06-24 20:34:41', '700');
 
 -- --------------------------------------------------------
 
@@ -600,7 +600,9 @@ CREATE TABLE `wallet_history` (
 INSERT INTO `wallet_history` (`id`, `email`, `description`, `amount`, `date`) VALUES
 (1, 'vivek@gmail.com', 'Annaprashan Puja', '2500', '2020-07-25 13:25:53'),
 (2, 'vivek@gmail.com', 'Ganesh Puja', '2100', '2020-07-25 13:33:23'),
-(3, 'vivek@gmail.com', 'Love and Relationship Report', '1400', '2020-07-27 12:14:53');
+(3, 'vivek@gmail.com', 'Love and Relationship Report', '1400', '2020-07-27 12:14:53'),
+(4, 'test@gmail.com', 'Donation For Needy Priests', '1000', '2021-06-24 23:23:18'),
+(5, 'test@gmail.com', 'Shradh', '2800', '2021-06-24 23:24:51');
 
 --
 -- Indexes for dumped tables
@@ -770,7 +772,7 @@ ALTER TABLE `blog_category`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `contact`
@@ -812,19 +814,19 @@ ALTER TABLE `report`
 -- AUTO_INCREMENT for table `transaction_history`
 --
 ALTER TABLE `transaction_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `wallet_history`
 --
 ALTER TABLE `wallet_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -3,10 +3,10 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="breadcrumb-content">
-				<h2>Product Info</h2>
+				<h2>Pooja</h2>
 				<ul>
 					<li><a href="<?php echo base_url();?>">Home</a></li>
-					<li><a href="">Product Info</a></li>
+					<li><a href="">Pooja Info</a></li>
 				</ul>
 			</div>
 		</div>
@@ -15,7 +15,7 @@
 <div id="content" class="single_products_page">
 <!-- single products page -->
 	<div id="products_products" class="single_products_section">
-		<?php foreach($astro_mall_product as $key):?>
+		<?php foreach($pooja as $key):?>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-6">
@@ -23,7 +23,7 @@
 						<div class="single_products_images">
 							<div class="single_product_image">
 								<div class="sp-loading">
-									<img src="<?php echo base_url($key->image);?>" alt="" width="100%">
+									<img src="<?php echo base_url($key->puja_img);?>" alt="Image Not found" width="100%">
 								</div>
 							</div>
 							<!-- 
@@ -69,23 +69,11 @@
 				
 				<div class="col-sm-6">
 					<div class="eb_left single_products_left_side">
-						<h2><?php echo $key->name;?></h2>
-						<div class="rating">
-							<p>			
-								<span><i class="fa fa-star"></i></span>				  				  
-								<span><i class="fa fa-star"></i></span>				  				  
-								<span><i class="fa fa-star"></i></span>				  				  
-								<span><i class="fa fa-star"></i></span>				  				  
-								<span><i class="fa fa-star-o"></i></span>
-								<span class="border"> | </span> 
-								<a href="javascript:void();" onclick="">0 reviews</a> <span class="border"> | </span> 	  
-								<a href="javascript:void();" onclick="" class="text_write_icon"><i class="fa fa-pencil-square-o"></i> Write a review</a>		  
-							</p>
-						</div>
+						<h2><?php echo $key->puja_name;?></h2>
 						<hr>
 						<div class="price-block">
 							<div class="price-box">
-								<p class="in-stock"><i class="fa fa-check"></i> In Stock</p>
+								<!-- <p class="in-stock"><i class="fa fa-check"></i> In Stock</p> -->
 								<p class="special-price"> <span class="price-label">Special Price</span> <span id="product-price-48" class="price"> Rs <?php echo $key->price;?> </span> </p>
 								<!-- <p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price"> $125.99 </span> --> </p>
 							</div>
@@ -100,40 +88,40 @@
 										<button onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="increase items-count" type="button"><i class="fa fa-plus">&nbsp;</i></button>
 									</div>
 								</div> -->
-								<button onclick="productAddToCartForm.submit(this)" class="btn btn-cart" title="Add to Cart" type="button">Add to Cart</button>
+								<a href="<?php echo base_url('home/book_pooja/'.$key->puja_id);?>" class="btn wow fadeInDown animated" title="Book Now"><span><i class="fa fa-shopping-cart"></i> Book Now</span></a>
 							</div>
 						</div>
 						
-						<!-- <div class="short-description">
+						<div class="short-description">
 							<h3>overview</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla. Donec a neque libero. </p>
-						</div> -->
+                            <p><?php echo $key->description; ?></p>
+						</div>
 						
-						<div class="email-addto-box">
+						<!-- <div class="email-addto-box">
 							<ul class="add-to-links">
 								<li> <a class="link-wishlist" href="javascript:void(0);"><span>Add to Wishlist</span></a></li>
 								<li><span class="separator">|</span> <a class="link-compare" href="javascript:void(0);"><span>Add to Compare</span></a></li>
 							</ul>
 							<p class="email-friend"><a href="javascript:void(0);" class=""><span>Email to a Friend</span></a></p>
-                      </div>
-						<ul class="shipping-pro">
+                      </div> -->
+						<!-- <ul class="shipping-pro">
 							<li>Free Wordwide Shipping</li>
 							<li>30 Days Return</li>
 							<li>Member Discount</li>
-                        </ul>
+                        </ul> -->
 						
 					</div>	
 				</div>
 			</div>		
 			
 			<!---- ---------------------->
-			<div class="row">
+			<!--<div class="row">
 				<div class="product-collateral">
 					<div class="add_info">
 							<ul id="product-detail-tab" class="nav nav-tabs product-tabs">
 								<li class="active"> <a href="#product_tabs_description" data-toggle="tab"> Product Description </a> </li>
-								<li><a href="#product_tabs_tags1" data-toggle="tab">Tags</a></li>
-								<li> <a href="#reviews_tabs1" data-toggle="tab">Reviews</a> </li>
+								<li><a href="#product_tabs_tags" data-toggle="tab">Tags</a></li>
+								<li> <a href="#reviews_tabs" data-toggle="tab">Reviews</a> </li>
 							</ul>
 
 
@@ -143,7 +131,7 @@
 									<?php echo $key->description; ?>
 								  </div>
 								</div>
-								<!-- product tabs description End-->
+								<!-- product tabs description End--
 								<div class="tab-pane fade" id="product_tabs_tags">
 									<div class="box-collateral box-tags">
 										<div class="tags">
@@ -158,11 +146,11 @@
 													</div>
 											  </form>
 										</div>
-									<!--tags-->
+									<!--tags--
 									<p class="note">Use spaces to separate tags. Use single quotes (') for phrases.</p>
 									</div>
 								</div>
-								<!-- Add Tags End-->
+								<!-- Add Tags End--
 								<div class="tab-pane fade" id="reviews_tabs">
 									<div class="eb-Reviews">
 										<div>
@@ -186,7 +174,7 @@
 														</div>
 													</div>
 												</div>
-												</li><!-- #comment-## -->
+												</li><!-- #comment-## --
 												<li class="comment">
 													<div>
 														<img alt="" src="assets/image/member/member2.png" class="avatar avatar-60 photo">
@@ -204,7 +192,7 @@
 														</div>
 													</div>
 												</div>
-												</li><!-- #comment-## -->
+												</li><!-- #comment-## --
 											</ol>
 										</div>
 									<div>
@@ -239,7 +227,7 @@
 										<input name="submit" type="submit" id="submit" class="btn submit" value="Submit"> 
 										</p>
 									</form>
-								</div><!-- #respond -->
+								</div>
 							</div>
 						</div>
 						<div class="clear"></div>
@@ -248,7 +236,7 @@
 						  </div>
 					</div>
 				</div>
-			</div>
+			</div>-->
 				
 			<!---- ---------------------->
 			

@@ -55,8 +55,8 @@
               </li>
             </ul>
           </li>
-           <!-- <li class=" nav-item"><a href="<?php echo base_url('admin/career'); ?>"><i class="icon-paper"></i><span data-i18n="nav.form_layouts.form_layout_basic" class="menu-title">Career</span></a>
-          </li>  -->
+           <li class=" nav-item"><a href="<?php echo base_url('admin/pooja_booking'); ?>"><i class="icon-paper"></i><span data-i18n="nav.form_layouts.form_layout_basic" class="menu-title">Pooja Booking</span></a>
+          </li> 
           <li class=" nav-item"><a href="<?php echo base_url('admin/enquiry'); ?>"><i class="icon-paper"></i><span data-i18n="nav.form_layouts.form_layout_basic" class="menu-title">Contact</span></a>
           </li>
           <li class=" nav-item"><a href="<?php echo base_url('admin/kundali'); ?>"><i class="icon-paper"></i><span data-i18n="nav.form_layouts.form_layout_basic" class="menu-title">Kundali</span></a>

@@ -1,6 +1,5 @@
-
 <!-- Footer Section -->
-	<footer id="footer" class="footer">
+	<footer id="footer" class="footer" style="color:#fff;">
 		<div class="container-fluid">
 			<div class="row">
 			<!-- Newslatter-->
@@ -29,51 +28,51 @@
 			<div class="row footer_matter">
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="footer_logo_wrapper">
-						<img src="<?php echo base_url();?>assets/image/logo/footer_logo.png" alt="footer_logo" class="img-responsive wow fadeInDown animated">
-						<h3 class="wow fadeInDown animated">+91-123-456-7890</h3>
-						<p class="wow fadeInDown animated">Donec id elit non mi porta gravida at eget metus. Donec id elit non Vestibulum id ligula porta felis euism od semper.</p>
-						<h4 class="wow fadeInDown animated"><a href="#" class="btn wow fadeInDown animated">Read More</a></h4>
-						<ul>
+						<img src="<?php echo base_url();?>assets/image/logo/logo_main.png" alt="footer_logo" class="img-responsive wow fadeInDown animated">
+						<h3 class="wow fadeInDown animated">+91 945-199-5835</h3>
+						<p class="wow fadeInDown animated" style="text-align:justify;">Astrology is called the vision of astrology in Ved Purush. Vedic astrology is divided into two parts. One theory is astrology and second is astrology. is. Does it include the statement of past tense present and future tense, the origin of Vedic astrology by Lord Shiva and by Lord Surya is scientific age in the modern era happening daily in the world and Vedic astrology is completely scientific according to this while doing Baleshwar .</p>
+						<!--<h4 class="wow fadeInDown animated"><a href="#" class="btn wow fadeInDown animated">Read More</a></h4>-->
+						<!--<ul>
 							<li class="wow fadeInDown animated"><a href="#"><i class="fa fa-facebook"></i></a></li>
 							<li class="wow fadeInDown animated"><a href="#"><i class="fa fa-twitter"></i></a></li>
 							<li class="wow fadeInDown animated"><a href="#"><i class="fa fa-youtube-play"></i></a></li>
 							<li class="wow fadeInDown animated"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						</ul>-->
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<div class="footer_list_wrapper">
+						<h2 class="wow fadeInDown animated">Useful Links</h2>
+						<ul class="footer_list">
+							<li class="wow fadeInDown animated"><a href="<?php echo base_url('home/astro_signup');?>"><i class="fa fa-angle-right" aria-hidden="true"></i> Astrologer Sign Up</a>
+							</li>
+							<li class="wow fadeInDown animated"><a href="<?php echo base_url('home/kundali');?>"><i class="fa fa-angle-right" aria-hidden="true"></i> Kundali </a>
+							</li>
+							<li class="wow fadeInDown animated"><a href="<?php echo base_url('home/astro_mall');?>"><i class="fa fa-angle-right" aria-hidden="true"></i>Products List </a>
+							</li>
+							<li class="wow fadeInDown animated"><a href="<?php echo base_url('home/cart');?>"><i class="fa fa-angle-right" aria-hidden="true"></i> Cart</a>
+							</li>
+							<li class="wow fadeInDown animated"><a href="<?php echo base_url('home/register');?>"><i class="fa fa-angle-right" aria-hidden="true"></i>User Login </a> </li>
+							<li class="wow fadeInDown animated"><a href="<?php echo base_url('home/blog');?>"><i class="fa fa-angle-right" aria-hidden="true"></i>Blog </a> </li>
+							<li class="wow fadeInDown animated"><a href="<?php echo base_url('home/contact');?>"><i class="fa fa-angle-right" aria-hidden="true"></i>Contact Us </a> </li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="footer_list_wrapper">
-						<h2 class="wow fadeInDown animated">Our Services</h2>
+						<h2>Services</h2>
 						<ul class="footer_list">
-							<li class="wow fadeInDown animated"><a href="about_us.html"><i class="fa fa-angle-right" aria-hidden="true"></i> About Us</a>
+							<li class="wow fadeInDown animated"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Chinese Horoscope 2021</a>
 							</li>
-							<li class="wow fadeInDown animated"><a href="services.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Our Services </a>
+							<li class="wow fadeInDown animated"><a href="<?php echo base_url('home/talk_to_astrologer');?>"><i class="fa fa-angle-right" aria-hidden="true"></i> Talk to Astrologer </a>
 							</li>
-							<li class="wow fadeInDown animated"><a href="products.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Products List </a>
+							<li class="wow fadeInDown animated"><a href="<?php echo base_url('home/chat_to_astrologer');?>"><i class="fa fa-angle-right" aria-hidden="true"></i> Chat to Astrologer</a>
 							</li>
-							<li class="wow fadeInDown animated"><a href="cart.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Cart</a>
+							<li class="wow fadeInDown animated"><a href="<?php echo base_url('home/kundali');?>"><i class="fa fa-angle-right" aria-hidden="true"></i> Kundali</a>
 							</li>
-							<li class="wow fadeInDown animated"><a href="checkout.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Checkout </a> </li>
-							<li class="wow fadeInDown animated"><a href="blog.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Blog </a> </li>
-							<li class="wow fadeInDown animated"><a href="contact_us.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Contact Us </a> </li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-					<div class="footer_list_wrapper">
-						<h2>Forecast</h2>
-						<ul class="footer_list">
-							<li class="wow fadeInDown animated"><a href="Aries.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Aries</a>
-							</li>
-							<li class="wow fadeInDown animated"><a href="Aries.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Taurus </a>
-							</li>
-							<li class="wow fadeInDown animated"><a href="Aries.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Gemini</a>
-							</li>
-							<li class="wow fadeInDown animated"><a href="Aries.html"><i class="fa fa-angle-right" aria-hidden="true"></i> Cancer</a>
-							</li>
-							<li class="wow fadeInDown animated"><a href="Aries.html"><i class="fa fa-angle-right" aria-hidden="true"></i>leo</a> </li>
-							<li class="wow fadeInDown animated"><a href="Aries.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Libra</a> </li>
-							<li class="wow fadeInDown animated"><a href="Aries.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Scorpio</a> </li>
+							<li class="wow fadeInDown animated"><a href="<?php echo base_url('home/astro_mall');?>"><i class="fa fa-angle-right" aria-hidden="true"></i>Astro Mall</a> </li>
+							<li class="wow fadeInDown animated"><a href="<?php echo base_url('home/astro_mall');?>"><i class="fa fa-angle-right" aria-hidden="true"></i>Blog</a> </li>
+							<li class="wow fadeInDown animated"><a href="<?php echo base_url('home/disclaimer');?>"><i class="fa fa-angle-right" aria-hidden="true"></i>Disclaimer</a> </li>
 							
 						</ul>
 					</div>
@@ -99,7 +98,7 @@
 	
 	<div class="footer_copyright">
 		<div class="container-fluid">
-			<p class="wow fadeInDown animated">© Copyright 2020 by Horoscope. All right Reserved - Design By <a href="https://www.playerofcode.com/" target="_blank">Player Of Code</a></p>
+			<p class="wow fadeInDown animated">© Copyright 2019-21 by Vaidik Astro Talk. All right Reserved.</p>
 		</div>
 	</div>
 
@@ -111,6 +110,13 @@
 <!-- back-to-top scrtion End-->
 <!-- script files -->
 <!-- home silder -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
 $(document).ready(function(){
 	$('#home-silder').owlCarousel({	
@@ -171,7 +177,7 @@ $(document).ready(function(){
 
 </script>
 
-	<script src="<?php echo base_url();?><?php echo base_url();?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url();?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="<?php echo base_url();?>assets/js/custom.js"></script>
 	<script>
 		function openNav() {

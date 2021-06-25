@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <meta name="author" content="PIXINVENT">
-    <title>Admin Dashboard - AstroTalk</title>
-    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo base_url('assets/img/'); ?>fevicon.ico">
-    <link rel="shortcut icon" type="image/png" href="<?php echo base_url('assets/img/fevicon.ico'); ?>">
+    <meta name="author" content="Vaidik Astro Talk">
+    <title>Admin Dashboard - Vaidik Astro Talk</title>
+    <link rel="icon" type="image/png" href="<?php echo base_url();?>assets/image/favicon.png" />
     <!-- BEGIN VENDOR CSS-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/admincss/'); ?>css/bootstrap.css">
     <!-- font icons-->
@@ -43,8 +42,8 @@
             <div class="card-header no-border">
                 <div class="card-title text-xs-center">
                     <div class="p-1">
-                        <h2>Vadik Astro Talk</h2>
-                        <!-- <img src="<?php echo base_url('assets/img/camssuccess2.png');?>" alt="branding logo" height="100"> --></div>
+                        <!-- <h2>Vadik Astro Talk</h2> -->
+                         <img src="<?php echo base_url('assets/image/logo/logo_main.png');?>" alt="branding logo" class="img-fluid"></div>
                 </div>
                 <h6 class="card-subtitle line-on-side text-muted text-xs-center font-small-3 pt-2"><span>Login Panel</span></h6>
             </div>

@@ -6,7 +6,7 @@
 				<h2>login</h2>
 				<ul>
 					<li><a href="<?php echo base_url();?>">Home</a></li>
-					<li><a href="">login</a></li>
+					<li><a href="">Login</a></li>
 				</ul>
 			</div>
 		</div>
@@ -22,7 +22,7 @@
 			<div class="row billing_and_payment_option wow fadeInDown   animated">
 				<div class="heading_wrapper wow fadeInDown animated">
 					<h2 class="wow fadeInDown animated">Login your Account</h2>
-					<p class="wow fadeInDown animated">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p>
+					<!-- <p class="wow fadeInDown animated">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p> -->
 				</div>
 				<!-- Billing Address -->
 				<div class="login_box">
@@ -42,7 +42,7 @@
                             </div> -->
 							<button type="submit" class="btn ">Register</button>
 							
-							<p class="signInclass"> Dont Have an Account?  &nbsp;<a href="login.html">Sign Up</a> </p>
+							<p class="signInclass"> Dont Have an Account?  &nbsp;<a href="<?php echo base_url('home/register');?>">Sign Up</a> </p>
 						
 					</form>
 					<div class="clear"></div>

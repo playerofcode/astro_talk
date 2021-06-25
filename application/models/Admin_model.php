@@ -427,6 +427,16 @@ class Admin_model extends CI_model
 	 	$this->db->where('id',$id);
 	 	return $this->db->update('astro_mall',$data);
 	 }
+	 public function getPoojaBooking()
+	 {
+	 	$this->db->order_by('id','desc');
+	 	return $this->db->get('booking')->result();
+	 }
+	 public function confirmBookingStatus($id)
+	 {
+	 	$this->db->where('id',$id);
+	 	return $this->db->update('booking',array('status'=>'confirm'));
+	 }
 }
 
 ?>

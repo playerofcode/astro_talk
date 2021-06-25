@@ -62,15 +62,15 @@
 						  </div>
 						  <div class="contact-box-item">
 							<p class="contact-box-title">Phone</p>
-							<div class="link-inline"><a href="#"><i class="fa fa-phone"></i> 1-800-1234-567</a></div>
+							<div class="link-inline"><a href="tel:+91 945-199-5835"><i class="fa fa-phone"></i> +91 945-199-5835</a></div>
 						  </div>
 						  <div class="contact-box-item">
 							<p class="contact-box-title">E-mail</p>
-							<div class="link-inline"><a href="#"><i class="fa fa-envelope-o"></i> info@company.gmail.com</a></div>
+							<div class="link-inline"><a href="mailto:ojasvientar@gmail.com"><i class="fa fa-envelope-o"></i> ojasvientar@gmail.com</a></div>
 						  </div>
 						  <div class="contact-box-item">
 							<p class="contact-box-title">Address</p>
-							<div class="link-inline link-inline-top"><a href="#"><i class="fa fa-map-marker"></i> 6036 Richmond hwy., Alexandria, VA, 2230</a></div>
+							<div class="link-inline link-inline-top"><a href="#"><i class="fa fa-map-marker"></i> India</a></div>
 						  </div>
 						</div>
 					</div>

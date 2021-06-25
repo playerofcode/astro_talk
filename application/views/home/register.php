@@ -22,7 +22,7 @@
 			<div class="row billing_and_payment_option wow fadeInDown   animated">
 				<div class="heading_wrapper wow fadeInDown animated">
 					<h2 class="wow fadeInDown animated">Registration</h2>
-					<p class="wow fadeInDown animated">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p>
+					<!-- <p class="wow fadeInDown animated">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p> -->
 				</div>
 				<!-- Billing Address -->
 				<div class="col-sm-6 col-lg-6">

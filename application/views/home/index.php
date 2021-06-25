@@ -1,13 +1,16 @@
-
+  <?php include 'timeago.php'; ?>
 <!-- silder -->
 
 <section id="silder" class="silder_wrapper">
 	<div id="home-silder" class="owl-carousel owl-theme">
 		<div class="item">
-			<img src="<?php echo base_url();?>assets/image/silder/images2.jpg" width="100%" alt="silder images" title="silder images">
+			<img src="<?php echo base_url();?>assets/image/silder/slider1.png" width="100%" alt="silder images" title="silder images">
 		</div>
 		<div class="item">
-		  <img src="<?php echo base_url();?>assets/image/silder/silder.jpg" width="100%" alt="silder images" title="silder images">
+			<img src="<?php echo base_url();?>assets/image/silder/slider2.png" width="100%" alt="silder images" title="silder images">
+		</div>
+		<div class="item">
+			<img src="<?php echo base_url();?>assets/image/silder/slider3.png" width="100%" alt="silder images" title="silder images">
 		</div>
 	</div>
 </section>
@@ -19,14 +22,14 @@
 				<div class="col-sm-6">
 					<div class="about_text wow slideInLeft">
 						<h2>astrology revels the will of god</h2>
-						<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-						<p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. or randomised words which don't look even slightly believable.</p>
+						<p>Astrology is called the vision of astrology in Ved Purush. Vedic astrology is divided into two parts. One theory is astrology and second is astrology. is. Does it include the statement of past tense present and future tense, the origin of Vedic astrology by Lord Shiva and by Lord Surya is scientific age in the modern era happening daily in the world and Vedic astrology is completely scientific according to this while doing Baleshwar .</p>
+					
 						
-						<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+						<p>Astrology is called the vision of astrology in Ved Purush. Vedic astrology is divided into two parts. One theory is astrology and second is astrology. is. Does it include the statement of past tense present and future tense, the origin of Vedic astrology by Lord Shiva and by Lord Surya is scientific age in the modern era happening daily in the world and Vedic astrology is completely scientific according to this while doing Baleshwar .</p>
 						
 						<h3>Contact Us</h3>
-						<h2 class="about_contact"><i class="fa fa-volume-control-phone"></i> +91-123-456-7890</h2>
-						<a href="about_us.html" class="btn">Read More</a>
+						<h2 class="about_contact"><i class="fa fa-volume-control-phone"></i> +91 945-199-5835</h2>
+						<a href="<?php echo base_url('home/about');?>" class="btn">Read More</a>
 					</div>
 				</div>
 				<div class="col-sm-6">
@@ -195,42 +198,35 @@
 			<div class="row">
 				<div id="product" class="owl-carousel owl-theme">
 			<!--1 -->
+			<?php foreach ($astro_mall_product as $key): ?>
 				<div class="item">
 					<div class="col-sm-12">
 						<div class="product-thumb">
 							<div class="image wow fadeInDown animated">
-								<a href="single-products.html"><img class="wow fadeInDown animated" src="<?php echo base_url();?>assets/image/products/products_01.png" alt="Kundli Dosha" title="Kundli Dosha" width="100%"></a>
-								
-								<div class="sale"><span class="">Sale</span></div>
-								<div class="button-group">
-									<div class="inner">
-										<button type="button" title="Quick View" class="button-quickview"><span>Quick View</span></button>
-										<button type="button" title="Add to Wish List" class="button-wishlist"><span>Add to Wish List</span></button>
-										<button type="button" title="Compare this Product" class="button-compare"><span>Compare this Product</span></button>
-									</div>
-								</div>
+								<a href="<?php echo base_url('home/product_info/'.$key->id);?>"><img class="wow fadeInDown animated" src="<?php echo base_url($key->image);?>" alt="Kundli Dosha" title="<?php echo $key->name;?>" width="100%" height="250px"></a>
 							</div>
 							<div class="caption">
 								
 								<div class="rate-and-title">
-									<h4 class="wow fadeInDown animated"><a href="single-products.html">Natural Mineral Stone</a></h4>
-									<div class="rating wow fadeInDown animated">
+									<h4 class="wow fadeInDown animated"><a href="<?php echo base_url('home/product_info/'.$key->id);?>"><?php echo $key->name;?></a></h4>
+									<!-- <div class="rating wow fadeInDown animated">
 										<i class="fa fa-star"></i>
 										<i class="fa fa-star"></i>
 										<i class="fa fa-star-o"></i>
 										<i class="fa fa-star-o"></i>
 										<i class="fa fa-star-o"></i>
 										<div class="clear"></div>
-									</div>
+									</div> -->
 									<p class="price wow fadeInDown animated">
-										<span class="price-old">$123.20</span> <span class="price-new">$110.00</span>  
+										<!-- <span class="price-old">$123.20</span> --> <span class="price-new">Rs <?php echo $key->price;?></span>  
 									</p>
-									<button type="button" class="btn wow fadeInDown animated" onclick="" title="Add to Cart"><span><i class="fa fa-shopping-cart"></i> Add to Cart</span></button>
+									<a href="<?php echo base_url('home/product_info/'.$key->id);?>" class="btn wow fadeInDown animated" onclick="" title="Add to Cart"><span><i class="fa fa-shopping-cart"></i> Add to Cart</span></a>
 								</div>
 							</div>
 						</div>
 					</div>				
-				</div>				
+				</div>		
+				<?php endforeach ?>		
 				<!-- 2-->
 				<div class="item">
 					<div class="col-sm-12">
@@ -562,85 +558,29 @@
 				<div class="row">
 					<div id="blog" class="owl-carousel owl-theme">
 					
+					<?php foreach ($recent_blog as $key): ?>
 						<div class="item">
 							<div class="col-sm-12">
 								<div class="blog_inner_matter">
 									<div class="image">
-										<a href=""><img src="<?php echo base_url();?>assets/image/blog/1.jpg" class="wow fadeInDown animated"></a>
+										<a href=""><img src="<?php echo base_url($key->blog_image);?>" class="wow fadeInDown animated"></a>
 										<div class="blog_date  wow fadeInDown animated">
-											<span>01-04-2020<span>
+											<span><?php
+echo date('d-m-Y', strtotime($key->date));
+?><span>
 										</div>
 									</div>
 									<div class="admin_and_comments wow fadeInDown animated">
 										<span class="blog_admin"><span><i class="fa fa-user-o"></i> Post By</span> <span><a href="">Admin</a></span></span>
-										<span class="comments_date"><span><i class="fa fa-comments-o"></i> 10 comments</span></span>
+										<span class="comments_date"><span><i class="fa fa-eye"></i> <?php echo facebook_time_ago($key->date); ?></span></span>
 									</div>
-									<h3 class="wow fadeInDown animated"><a href="">Proin gravida nibh vel velit auctor aliquet.</a></h3>
-									<p class="wow fadeInDown animated">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
-									<a href="" class="btn wow fadeInDown animated" >Read More</a>
+									<h3 class="wow fadeInDown animated"><a href=""><?php echo $key->blog_title;?></a></h3>
+									<p class="wow fadeInDown animated"><?php echo substr($key->blog_description,0,220);?></p>
+									<a href="<?php echo base_url('home/blog_detail/'.$key->id);?>" class="btn wow fadeInDown animated" >Read More</a>
 								</div>
 							</div>
 						</div>
-						
-						<div class="item">
-							<div class="col-sm-12">
-								<div class="blog_inner_matter">
-									<div class="image">
-										<a href=""><img src="<?php echo base_url();?>assets/image/blog/3.jpg" class="wow fadeInDown animated"></a>
-										<div class="blog_date  wow fadeInDown animated">
-											<span>01-04-2020<span>
-										</div>
-									</div>
-									<div class="admin_and_comments wow fadeInDown animated">
-										<span class="blog_admin"><span><i class="fa fa-user-o"></i> Post By</span> <span><a href="">Admin</a></span></span>
-										<span class="comments_date"><span><i class="fa fa-comments-o"></i> 10 comments</span></span>
-									</div>
-									<h3 class="wow fadeInDown animated"><a href="">Proin gravida nibh vel velit auctor aliquet.</a></h3>
-									<p class="wow fadeInDown animated">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
-									<a href="" class="btn wow fadeInDown animated" >Read More</a>
-								</div>
-							</div>
-						</div>
-						
-						<div class="item">
-							<div class="col-sm-12">
-								<div class="blog_inner_matter">
-									<div class="image">
-										<a href=""><img src="<?php echo base_url();?>assets/image/blog/2.jpg" class="wow fadeInDown animated"></a>
-										<div class="blog_date  wow fadeInDown animated">
-											<span>01-04-2020<span>
-										</div>
-									</div>
-									<div class="admin_and_comments wow fadeInDown animated">
-										<span class="blog_admin"><span><i class="fa fa-user-o"></i> Post By</span> <span><a href="">Admin</a></span></span>
-										<span class="comments_date"><span><i class="fa fa-comments-o"></i> 10 comments</span></span>
-									</div>
-									<h3 class="wow fadeInDown animated"><a href="">Proin gravida nibh vel velit auctor aliquet.</a></h3>
-									<p class="wow fadeInDown animated">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
-									<a href="" class="btn wow fadeInDown animated" >Read More</a>
-								</div>
-							</div>
-						</div>
-						
-						<div class="item">
-							<div class="col-sm-12">
-								<div class="blog_inner_matter">
-									<div class="image">
-										<a href=""><img src="<?php echo base_url();?>assets/image/blog/1.jpg" class="wow fadeInDown animated"></a>
-										<div class="blog_date  wow fadeInDown animated">
-											<span>01-04-2020<span>
-										</div>
-									</div>
-									<div class="admin_and_comments wow fadeInDown animated">
-										<span class="blog_admin"><span><i class="fa fa-user-o"></i> Post By</span> <span><a href="">Admin</a></span></span>
-										<span class="comments_date"><span><i class="fa fa-comments-o"></i> 10 comments</span></span>
-									</div>
-									<h3 class="wow fadeInDown animated"><a href="">Proin gravida nibh vel velit auctor aliquet.</a></h3>
-									<p class="wow fadeInDown animated">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
-									<a href="" class="btn wow fadeInDown animated" >Read More</a>
-								</div>
-							</div>
-						</div>
+						<?php endforeach ?>
 					</div>
 				</div>
 			</div>

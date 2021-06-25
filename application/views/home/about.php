@@ -3,7 +3,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="breadcrumb-content">
-				<h2>About Us</h2>g
+				<h2>About Us</h2>
 				<ul>
 					<li><a href="<?php echo base_url();?>">Home</a></li>
 					<li><a href="">About Us</a></li>
@@ -20,13 +20,10 @@
 				<div class="col-sm-6">
 					<div class="about_text wow slideInLeft">
 						<h2>astrology revels the will of god</h2>
-						<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-						<p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. or randomised words which don't look even slightly believable.</p>
-						
-						<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+						<p>Astrology is called the vision of astrology in Ved Purush. Vedic astrology is divided into two parts. One theory is astrology and second is astrology. is. Does it include the statement of past tense present and future tense, the origin of Vedic astrology by Lord Shiva and by Lord Surya is scientific age in the modern era happening daily in the world and Vedic astrology is completely scientific according to this while doing Baleshwar . The opinion of astrologers may be different, but in relation to the principle astrology, no astrologer has a different position, today it is possible to tell through the theory of astrology that the position of the new planets, the sun and what position after 100 years from today. Will it be? The theory astrology is a purely calculative work and it is based on the calculation rule which has formulas and is therefore completely scientific. Similar resultant astrology is also completely scientific and the reality of the result depends on how the astrologer, the astrologer, has assimilated the rules and sources of astrology.</p>
 						
 						<h3>Contact Us</h3>
-						<h2 class="about_contact"><i class="fa fa-volume-control-phone"></i> +91-123-456-7890</h2>
+						<h2 class="about_contact"><i class="fa fa-volume-control-phone"></i> +91 945-199-5835</h2>
 						<a href="#" class="btn">Read More</a>
 					</div>
 				</div>

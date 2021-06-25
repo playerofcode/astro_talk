@@ -1452,7 +1452,27 @@ class Admin extends CI_Controller
 			$this->session->set_flashdata('msg','Something went wrong');
 			return redirect(base_url().'admin/astro_mall_product_list');	
 		}
-
+	}
+	public function pooja_booking()
+	{
+		$data['pooja_booking']=$this->model->getPoojaBooking();
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/pooja_booking',$data);
+		$this->load->view('admin/footer');
+	}
+	public function confirm_booking_status($id)
+	{
+	if($this->model->confirmBookingStatus($id))
+		{
+			$this->session->set_flashdata('msg','Pooja Booking confirmed successfully');
+			return redirect(base_url().'admin/pooja_booking');
+		}
+		else
+		{
+			$this->session->set_flashdata('msg','Something went wrong');
+			return redirect(base_url().'admin/pooja_booking');	
+		}
 	}
 }
 

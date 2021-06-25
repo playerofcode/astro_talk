@@ -88,6 +88,43 @@ class Home_model extends CI_Model {
 		$this->db->order_by('cat_id','DESC');
 		return $this->db->get('puja_category')->result();
 	}
+	//24 July, 2021
+	public function getCurrentBalance($email)
+	{
+		return $this->db->get_where('users',array('email'=>$email))->row()->balance;
+	}
+	public function confirmPoojaBooking($data)
+	{
+		return $this->db->insert('booking',$data);
+	}
+	public function updateRemainingBalance($email,$remain_balance)
+	{
+		$this->db->where('email',$email);
+		return $this->db->update('users',array('balance'=>$remain_balance));
+	}
+	public function addWalletHistory($wallet)
+	{
+		return $this->db->insert('wallet_history',$wallet);
+	}
+	public function addTransactionHistory($data)
+	{
+		return $this->db->insert('transaction_history',$data);
+	}
+	public function getOrderHistory($email)
+	{
+		$this->db->order_by('id','desc');
+		return $this->db->get_where('booking',array('email'=>$email))->result();
+	}
+	public function getWalletHistory($email)
+	{
+		$this->db->order_by('id','desc');
+		return $this->db->get_where('wallet_history',array('email'=>$email))->result();
+	}
+	public function getTransactionHistory($email)
+	{
+		$this->db->order_by('id','desc');
+		return $this->db->get_where('transaction_history',array('email_id'=>$email))->result();
+	}
 }
 
 
